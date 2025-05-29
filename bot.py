@@ -43,10 +43,9 @@ def get_random_joke_18():
     return "Не удалось получить шутку."
 
 
-def get_poem(poem_type='normal'):
-    ctype = 13 if poem_type == 'adult' else 3
+def get_poem():
     response = requests.get(
-        f'http://rzhunemogu.ru/RandJSON.aspx?CType={ctype}')
+        f'http://rzhunemogu.ru/RandJSON.aspx?CType=3')
     if response.status_code == 200:
         cleaned_response = response.text.replace(
             "\r", "").replace("\n", "").replace("\t", "")
@@ -58,7 +57,7 @@ def get_poem(poem_type='normal'):
     return "Не удалось получить стих."
 
 
-def get_poem_18(poem_type='normal'):
+def get_poem_18():
     response = requests.get(f'http://rzhunemogu.ru/RandJSON.aspx?CType=13')
     if response.status_code == 200:
         cleaned_response = response.text.replace(
