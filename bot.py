@@ -171,7 +171,6 @@ async def fact(update: Update, context: CallbackContext):
 
 
 def main():
-    token = '7364628913:AAFOiyxfOhrrWziTwhHdrI2vuK6XOtkDw-4'
 
     logger.info("Запуск бота")
     application = Application.builder().token(token).build()
